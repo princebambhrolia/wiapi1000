@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg">
+    </div>
+    <div>
+    
+    </div>
+  <div class="card-bg">
+<form class="btn">
+    <p id="card"></p>
+    <input type="text" id="userInput" style="background-color: ghostwhite; width: 60%; height: 25px; margin-top: -10px;">
+    <input type="submit" style="background-color: black; color: white; height: 28px;" >
+</form>
+</div>
+<div>
+    <img src="./img/sun.png" alt="" class="sun-img">
+</div>
+<script>
+ 
+    document.querySelector('form').addEventListener('submit',(e)=>{
+        e.preventDefault();
+
+        const weather = async () => {
+        try{
+            let api = '094b1cddc40a67c426c17b4f56de2b4d';
+
+            let userInput = document.getElementById('userInput').value
+            console.log(userInput);
+
+            let result = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=${api}&units=metric`);
+
+            let res = await result.json()
+
+            console.log(res);
+
+            let card = document.getElementById('card');
+
+            card.style.display = 'block'
+
+            card.innerText = res.main.temp;
+
+        }catch(err){
+            console.log(err)
+        }
+
+       
+    }
+
+    weather();
+   
+    })
+   
+</script>
+
+</body>
+</html>

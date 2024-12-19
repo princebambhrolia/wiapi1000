@@ -1,0 +1,31 @@
+body{
+    background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/07/Weather-Background.jpg");
+    background-repeat: no-repeat;
+}
+#card {
+    padding: 10px;
+    display: none;
+    color: white;
+    position:fixed ;
+    margin-top: -160px;
+    margin-left: 50px;
+    font-size: 80px;
+}
+.card-bg{
+    border: solid white 1px;
+    width: 20%;
+    height: 400px;
+    text-align: center;
+    margin-left: 620px;
+    margin-top: 160px;
+}
+.btn{
+    margin-top: 371px;
+    text-align: center;
+}
+.sun-img{
+    margin-top: -350px;
+    margin-bottom: 300px;
+    margin-left: 710px;
+}
+
